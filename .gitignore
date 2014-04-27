@@ -1,3 +1,18 @@
+/.arc_jira_lib
+/.externalToolBuilders
+.project
+*.settings/
+.classpath
+/build
+/.idea/
+/logs
+*target/
+*.iml
+*.orig
+*~
+*.iws
+*.iml
+*.ipr
 *.class
 
 # Mobile Tools for Java (J2ME)
