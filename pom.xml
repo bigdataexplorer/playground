@@ -7,18 +7,38 @@
 	<packaging>pom</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>playground</name>
-	<url />
+	<description>
+    </description>
+	<url></url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<hadoop-1.version>1.2.1</hadoop-1.version>
 		<hadoop-2.version>2.2.0</hadoop-2.version>
 		<hbase.version>0.96.2-hadoop2</hbase.version>
 		<junit.version>4.11</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j.version>1.6.4</slf4j.version>
+		<mrunit.version>1.0.0</mrunit.version>
+		<commons-cli.version>1.2</commons-cli.version>
 	</properties>
 	<modules>
 		<module>pg-hbase</module>
 		<module>pg-common</module>
+		<module>pg-machine-learning</module>
 	</modules>
+	<scm>
+		<url>https://github.com/bigdataexplorer/playground.git</url>
+		<connection>scm:git:git://github.com/bigdataexplorer/playground.git</connection>
+		<developerConnection>scm:git:git@github.com:bigdataexplorer/playground.git</developerConnection>
+	</scm>
+	<developers>
+		<developer>
+			<email>wei.shung.chung@gmail.com</email>
+			<name>Wei Shung Chung</name>
+			<url>https://github.com/bigdataexplorer</url>
+			<id>bigdataexplorer</id>
+		</developer>
+	</developers>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>repo1.maven.org</id>
@@ -120,10 +140,36 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
+				<groupId>wsc.bigdata.playground</groupId>
+				<artifactId>pg-common</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.mrunit</groupId>
+				<artifactId>mrunit</artifactId>
+				<version>${mrunit.version}</version>
+				<classifier>hadoop2</classifier>
+			</dependency>
+			<dependency>
+				<groupId>commons-cli</groupId>
+				<artifactId>commons-cli</artifactId>
+				<version>${commons-cli.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.hadoop</groupId>

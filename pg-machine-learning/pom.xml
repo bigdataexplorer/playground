@@ -8,8 +8,8 @@
 		<groupId>wsc.bigdata.playground</groupId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>pg-hbase</artifactId>
-	<name>pg-hbase</name>
+	<artifactId>pg-machine-learning</artifactId>
+	<name>pg-machine-learning</name>
 	<build>
 		<plugins>
 			<plugin>
