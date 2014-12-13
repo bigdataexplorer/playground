@@ -6,6 +6,9 @@ import org.apache.commons.cli.ParseException;
 
 import wsc.bigdata.playground.common.CommandOptions;
 
+/**
+ * The standard base MapReduce job options
+ */
 public class MapReduceJobOptions extends CommandOptions {
   protected String inputPath;
   protected String outputPath;
@@ -17,6 +20,9 @@ public class MapReduceJobOptions extends CommandOptions {
     createOptions();
   }
 
+  /**
+   * Create options for input path, output path, input delimiter, output delimiter, number of tokens
+   */
   public void createOptions() {
     Option inputPathOption = CommandOptions.createOption("i", "input", "Specify Input Path", true, "inputPath", true, null);
     add(inputPathOption);
@@ -30,6 +36,11 @@ public class MapReduceJobOptions extends CommandOptions {
     add(numberTokensOption);
   }
   
+  /**
+   * Populate the options given the program args
+   * @param args the program args
+   * @throws ParseException
+   */
   public void populate(String[] args) throws ParseException {
     CommandLine cmd = parse(args);
     inputPath = cmd.getOptionValue("i");
