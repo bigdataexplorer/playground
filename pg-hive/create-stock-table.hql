@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS playground;
+USE playground;
+
+CREATE EXTERNAL TABLE IF NOT EXISTS stock (
+stock_exchange STRING,
+symbol STRING,
+date STRING,
+open FLOAT,
+high FLOAT,
+low FLOAT,
+close FLOAT,
+volume BIGINT,
+adj_close FLOAT)
+ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+LOCATION '/data/stock/';
